@@ -256,6 +256,7 @@ body {
 
 header {
     background-color: white;
+    font-size: 16px;
     padding: 0;
     text-align: center;
     color: white;
@@ -313,6 +314,7 @@ footer {
 
     .navbar-custom .navbar-nav > li:last-child > a {
         border-right: 1px solid #02629c;
+        margin-right: 15px;
     }
 
     .navbar-custom .navbar-nav > li > a {

@@ -12,36 +12,30 @@
 </head>
 <body>
     <header>
+       
         <nav class="navbar-fixed-top navbar-custom" role="navigation">
-            <div class="container">
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <!--<li>
-                        <a asp-controller="Pastry" asp-action="List">Pastries</a>
-                    </li>-->
-                        @await Component.InvokeAsync("CategoryMenu")
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            @await Component.InvokeAsync("ShoppingCartSummary")
-                        </li>
-                    </ul>
 
-                </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Pastry" asp-action="List">All Pastries</a>
+                    </li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @await Component.InvokeAsync("ShoppingCartSummary")
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
+        <div class="col-md-12" style="margin-bottom: 100px;">
+            @RenderBody()</div>
     </main>
     <footer>
         <div>2021 - <span class="glyphicon glyphicon-copyright-mark"></span>PastryShop</div>
