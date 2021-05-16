@@ -1,0 +1,38 @@
+﻿@model ShoppingCartViewModel
+
+<h2>Your shopping cart</h2>
+<h4>Here are the delicious pastries in your shopping cart.</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Selected amount</th>
+            <th>Pastry</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shoppingCartItem in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td class="text-center">@shoppingCartItem.Amount</td>
+                <td class="text-left">@shoppingCartItem.Pastry.PastryName</td>
+                <td class="text-right">@shoppingCartItem.Pastry.Price.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))</td>
+                <td class="text-right">
+                    @((shoppingCartItem.Amount * shoppingCartItem.Pastry.Price).ToString("C", CultureInfo.CreateSpecificCulture("de-DE")))
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.ShoppingCartTotal.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Check out now!</a>
+</div>

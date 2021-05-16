@@ -1,0 +1,14 @@
+﻿@model PastriesListViewModel
+
+
+    <h1>@Model.CurrentCategory</h1>
+
+    <div class="grid-container">
+
+        @foreach (var pastry in Model.Pastries)
+        {
+            <partial name="_PastryCard" model="pastry" />
+        }
+
+    </div>
+

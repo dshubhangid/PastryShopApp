@@ -1,0 +1,21 @@
+﻿@model Pastry
+
+<h2>@Model.PastryName</h2>
+<div class="thumbnail">
+    <div>
+        <img src="@Model.ImageUrl" alt="@Model.PastryName" />
+    </div>    
+    <div class="caption-full">
+        <h3 class="pull-right">@Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))</h3>
+        <h3>
+            <a href="#">@Model.PastryName</a>
+        </h3>
+        <h4>@Model.PastryShortDesc</h4>
+        <h4>@Model.PastryLongDesc</h4>
+    </div>
+    <div class="addToCart">
+        <p class="button">
+            <a class="btn btn-primary" asp-controller="ShoppingCart"asp-action="AddToShoppingCart" asp-route-pastryId="@Model.PastryId">Add to cart</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model Pastry
+
+<div class="effect5">
+
+    <div class="innerItemImgCss">
+        <img class="imageCss" src="@Model.ImageThumbnailUrl" alt="" />
+    </div>
+    <div class="captionCss">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>
+                    <a asp-controller="Pastry" asp-action="Details" asp-route-id="@Model.PastryId">@Model.PastryName</a>
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <h3 class="pull-right">@Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h5>@Model.PastryShortDesc</h5>
+            </div>
+        </div>
+    </div>
+    <div class="addToCart">
+        <p class="button">
+            <a class="btn btn-primary btn-lg btn-block"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-pastryId="@Model.PastryId">Add to cart</a>
+        </p>
+    </div>
+</div>
