@@ -57,7 +57,7 @@ namespace PastryShopApp.Models
                             Price = 18.95M,
                             PastryShortDesc = "You'll love it!",
                             PastryLongDesc = "Sliced apples and other fruit are wrapped and cooked in layers of filo pastry. The earliest known recipe is in Vienna, but several countries in central and eastern Europe claim this dish.",
-                            CategoryId = 2,
+                            CategoryId = 3,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/40/Strudel.jpg",
                             IsPastryInStock = true,
                             IsPastryOfWeek = false,
